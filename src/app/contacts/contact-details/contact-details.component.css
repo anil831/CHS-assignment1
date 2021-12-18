@@ -1,0 +1,55 @@
+span{
+  display: inline-block;
+}
+span:nth-child(1){
+  width: 150px;
+  margin-right: 10px;
+}
+span:nth-child(2){
+  width: 80px;
+  margin: 0 10px 20px;
+}
+span:nth-child(3){
+  width: 300px;
+}
+input[type="number"]{
+  padding: 10px 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+h3{
+  text-align: center;
+  margin: auto;
+}
+
+
+/*********************************/
+img.rollingEyes{
+  vertical-align: middle;
+  width: 70px;
+  margin: auto;
+  opacity: 0.5;
+  text-align: center;
+  position: relative;
+  left: 47%;
+  margin-bottom: 10px;
+}
+h3,p{
+  text-align: center;
+}
+p{
+  font-size: 20px;
+}
+img.comments{
+  width: 16px;
+  margin-right: 5px;
+}
+a{
+  text-decoration: none;
+}
+

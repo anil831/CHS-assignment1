@@ -1,0 +1,50 @@
+
+      <div *ngIf="contacts.length>0">
+        <clr-datagrid [(clrDgSelected)]="selected">
+          <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+          <clr-dg-column [clrDgField]="'account_details'">Creation date</clr-dg-column>
+          <clr-dg-column [clrDgField]="'last_activity'">Favorite color</clr-dg-column>
+
+          <clr-dg-row *clrDgItems="let contact of contacts" [clrDgItem]="contact">
+            <clr-dg-cell>{{contact.name}}</clr-dg-cell>
+            <clr-dg-cell>{{contact.account_details}}</clr-dg-cell>
+            <clr-dg-cell><span>{{contact.last_activity}} </span>
+              <span>Quick Pay :</span>
+              <span><input type="number" placeholder="0.00" /></span>
+            </clr-dg-cell>
+          </clr-dg-row>
+
+          <clr-dg-footer>
+            <clr-dg-pagination #pagination [clrDgPageSize]="10">
+              <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Users per page</clr-dg-page-size>
+              {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} users
+            </clr-dg-pagination>
+          </clr-dg-footer>
+      </clr-datagrid>
+
+      </div>
+      <div *ngIf="contacts.length===0 && currentSection==='serviceProviders'||currentSection==='employees'" >
+        <img class="rollingEyes" [src]="contactsIcon" alt="">
+        <h3>No ContactsFound</h3>
+      </div>
+
+      <div *ngIf="contacts.length===0 && currentSection==='customers'" >
+        <img class="rollingEyes" [src]="userLockIcon" alt="user lock icon">
+        <h3>Sorry!</h3>
+        <p>You are not entitled to see any contacts.
+        </p>
+        <p>
+          To request access, contact your system administrator.
+        </p>
+        <p>
+          <img class="comments" [src]="chatIcon" alt="chat icon">
+
+          <a href="#">Start Conversation</a>
+        </p>
+        <p>
+          <img class="comments" [src]="mobileIcon" alt="chat icon">
+          Call 800-972-3030
+        </p>
+      </div>
+
+
